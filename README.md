@@ -85,24 +85,21 @@ plt.show()
 
 ### Display the input Image
 <br>
-<img src="https://github.com/Jenishajustin/erosion-dilation/assets/119405070/f9fcb6ab-d718-4fa3-8651-98b49b6a4c13">
 
 <br>
 
 ### Display the Eroded Image
 <br>
-<img src="https://github.com/Jenishajustin/erosion-dilation/assets/119405070/80452686-8086-4022-9ade-1cf103981947">
 
 <br>
 
 ### Display the Dilated Image
 <br>
-<img src="https://github.com/Jenishajustin/erosion-dilation/assets/119405070/9886fb08-7f72-47fb-b742-7c546e11b8f4">
 <br>
 
 ### Full Output
 <br>
-<img src="https://github.com/Jenishajustin/erosion-dilation/assets/119405070/04f575d4-473e-4a3d-b11b-4c82f84c5462">
+
 <br>
 
 ## Result
