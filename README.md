@@ -1,4 +1,4 @@
-# Implementation of Erosion and Dilation
+# EX 09 : Implementation of Erosion and Dilation
 ## Aim
 To implement Erosion and Dilation using Python and OpenCV.
 ## Software Required
@@ -21,84 +21,61 @@ Dislay the images.
 
  
 ## Program:
-
+```
+Developed By : J.JENISHA
+Reg. No. : 212222230056
+```
 
 ``` python
-# Import the necessary packages
-import cv2
+# Import the necessary packages :
+
 import numpy as np
-from matplotlib import pyplot as plt
+import cv2
+import matplotlib.pyplot as plt
 
-#to read the color image
-input_image_path='anime.jpg'
-color_image=cv2.imread(input_image_path)
+# Create the Text using cv2.putText :
 
-#convert the color image to grayscale
-gray_image=cv2.cvtColor(color_image,cv2.COLOR_BGR2GRAY)
+img = np.zeros((100,400),dtype = 'uint8')
+font = cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(img ,'JENISHA',(60,70),font,2,(255),5,cv2.LINE_AA)
+plt.imshow(img)
+plt.axis('off')
 
-#perform edge detection using Canny
-edges=cv2.Canny(gray_image,100,200)
+# Create the structuring element :
 
-#define the kernel size for erosion and dilation
-kernel_size=5
-kernel=np.ones((kernel_size,kernel_size),np.uint8)
+kernel = np.ones((5,5),np.uint8)
+kernel1 = cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
+cv2.erode(img,kernel)
 
-#perform erosion
-erosion=cv2.erode(edges,kernel,iterations=1)
+# Erode the image :
 
-#perform dilation
-dilation=cv2.dilate(edges,kernel,iterations=1)
+img_erode = cv2.erode(img,kernel1)
+plt.imshow(img_erode)
+plt.axis('off')
 
-#display all images
-plt.figure(figsize=(15,10))
+# Dilate the image :
 
-plt.subplot(2,3,1)
-plt.imshow(cv2.cvtColor(color_image,cv2.COLOR_BGR2RGB))
-plt.title('Original Color Image')
-plt.axis('on')
-
-plt.subplot(2,3,2)
-plt.imshow(gray_image,cmap='gray')
-plt.title('Black and White Image')
-plt.axis('on')
-
-plt.subplot(2,3,3)
-plt.imshow(edges,cmap='gray')
-plt.title('Edge Segmentation')
-plt.axis('on')
-
-plt.subplot(2,3,4)
-plt.imshow(erosion,cmap='gray')
-plt.title('Erosion')
-plt.axis('on')
-
-plt.subplot(2,3,5)
-plt.imshow(dilation,cmap='gray')
-plt.title('Dilation')
-plt.axis('on')
-
-plt.show()
-
-
+img_dilate = cv2.dilate(img,kernel1)
+plt.imshow(img_dilate)
+plt.axis('off')
 ```
 ## Output:
 
 ### Display the input Image
 <br>
+<img src="https://github.com/Jenishajustin/erosion-dilation/assets/119405070/3b155592-6f65-4f43-9661-4f90f6defe2b">
 
 <br>
 
 ### Display the Eroded Image
 <br>
+<img src="https://github.com/Jenishajustin/erosion-dilation/assets/119405070/413caf35-e1c4-4bf4-b250-4ba3de23a562">
 
 <br>
 
 ### Display the Dilated Image
 <br>
-<br>
-
-### Full Output
-<br>
+<img src="https://github.com/Jenishajustin/erosion-dilation/assets/119405070/005bdb73-3b65-41f2-bf1f-ec9ac53dff11">
 
 <br>
 
